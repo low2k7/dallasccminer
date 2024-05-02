@@ -39,12 +39,9 @@ cat << EOF > ~/ccminer/start.sh
 EOF
 chmod +x start.sh
 
-echo "Setup nearly complete."
+echo "Setup nearly complete!"
 echo "Edit the config with \"nano ~/ccminer/config.json\""
-
-echo "Change address and your worker name."
-echo "Use \"<CTRL>-x\" to exit and respond with"
-echo "\"y\" on the question to save and \"enter\""
-echo "on the name"
-
-echo "start the miner with \"cd ~/ccminer; ./start.sh\"."
+echo "Change address and worker name."
+echo "Use \"CTRL + x\" to exit and respond with"
+echo "\"y\" on the question to save and \"enter\" on the name"
+echo "start the miner with \"cd ~/ccminer/start.sh\""
