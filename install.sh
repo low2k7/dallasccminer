@@ -19,24 +19,22 @@ echo "Downloading latest release: $GITHUB_DOWNLOAD_NAME"
 
 wget ${GITHUB_DOWNLOAD_URL} -P ~/ccminer
 
-if [ -f ~/ccminer/config.json ]
-then
-  INPUT=
-  while [ "$INPUT" != "y" ] && [ "$INPUT" != "n" ]
-  do
-    printf '"~/ccminer/config.json" already exists. Do you want to overwrite? (y/n) '
-    read INPUT
-    if [ "$INPUT" = "y" ]
-    then
-      echo "\noverwriting current \"~/ccminer/config.json\"\n"
-      rm ~/ccminer/config.json
-    elif [ "$INPUT" = "n" ]
-    then
-      echo "saving as \"~/ccminer/config.json.#\""
-    else
-      echo 'Invalid input. Please answer with "y" or "n".\n'
-    fi
-  done
+config_file=~/ccminer/config.json
+
+if [ -f "$config_file" ]; then
+  printf "\"$config_file\" already exists. Do you want to overwrite? (y/n): "
+  read -r INPUT
+
+  INPUT=$(echo "$INPUT" | tr '[:upper:]' '[:lower:]')
+
+  if [ "$INPUT" = "y" ]; then
+    echo -e "\nOverwriting current \"$config_file\"\n"
+    rm "$config_file"
+  elif [ "$INPUT" = "n" ]; then
+    echo "Saving as \"$config_file.#\""
+  else
+    echo "Invalid input. Please answer with \"y\" or \"n\"."
+  fi
 fi
 wget https://raw.githubusercontent.com/low2k7/dallasccminer/main/config.json -P ~/ccminer
 
