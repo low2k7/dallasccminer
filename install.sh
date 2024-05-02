@@ -1,6 +1,12 @@
 #!/bin/sh
+echo
+echo "Running update and upgrade..."
+echo
 sudo apt update -y
 sudo apt upgrade -y
+echo
+echo "Installing dependencies..."
+echo
 sudo apt install libcurl4-openssl-dev libjansson-dev libomp-dev git screen nano jq wget -y
 wget http://ports.ubuntu.com/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_arm64.deb
 sudo dpkg -i libssl1.1_1.1.0g-2ubuntu4_arm64.deb
@@ -37,6 +43,7 @@ then
   echo "A ccminer binary was found and renamed to ccminer.old as a backup"
   echo
 fi
+
 mv ~/ccminer/${GITHUB_DOWNLOAD_NAME} ~/ccminer/ccminer
 chmod +x ~/ccminer/ccminer
 
