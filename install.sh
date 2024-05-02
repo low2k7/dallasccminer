@@ -59,7 +59,7 @@ echo
 echo "Edit the config with \"nano ~/ccminer/config.json\""
 echo "Change pools, wallet address and worker name."
 echo
-echo "Use \"CTRL + x\" to exit and respond with \"y\" on the question and to save \"enter\" on the name"
+echo "Use \"CTRL + x\" to exit and respond with \"y\" on the question and to save \"enter\" on the name."
 echo
 echo "Start the miner with \"~/ccminer/start.sh\""
 echo 
