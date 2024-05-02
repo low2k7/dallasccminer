@@ -19,20 +19,24 @@ wget ${GITHUB_DOWNLOAD_URL} -P ~/ccminer
 config_file=~/ccminer/config.json
 
 if [ -f "$config_file" ]; then
-  printf "\"$config_file\" already exists. Do you want to overwrite? (y/n): "
-  read -r INPUT
+    echo "A config.json file already exists in ~/ccminer."
 
-  INPUT=$(echo "$INPUT" | tr '[:upper:]' '[:lower:]')
-
-  if [ "$INPUT" = "y" ]; then
-    echo -e "\nOverwriting current \"$config_file\"\n"
-    rm "$config_file"
-  elif [ "$INPUT" = "n" ]; then
-    echo "Saving as \"$config_file.#\""
-  else
-    echo "Invalid input. Please answer with \"y\" or \"n\"."
-  fi
+    read -p "Do you want to overwrite it? (y/n): " answer
+    case "$answer" in
+        y|Y)
+            echo "Removing existing config.json..."
+            rm "$config_file"
+            ;;
+        n|N)
+            echo "Keeping existing config.json."
+            ;;
+        *)
+            echo "Invalid input. Keeping existing config.json."
+            ;;
+    esac
 fi
+
+echo "Downloading new config.json..."
 wget https://raw.githubusercontent.com/low2k7/dallasccminer/main/config.json -P ~/ccminer
 
 if [ -f ~/ccminer/ccminer ]
