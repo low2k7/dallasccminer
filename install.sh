@@ -5,10 +5,7 @@ sudo apt-get -y install libcurl4-openssl-dev libjansson-dev libomp-dev git scree
 wget http://ports.ubuntu.com/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_arm64.deb
 sudo dpkg -i libssl1.1_1.1.0g-2ubuntu4_arm64.deb
 rm libssl1.1_1.1.0g-2ubuntu4_arm64.deb
-if [ ! -d ~/ccminer ]
-then
-  mkdir ~/ccminer
-fi
+mkdir -p ~/ccminer
 cd ~/ccminer
 
 GITHUB_RELEASE_JSON=$(curl --silent "https://api.github.com/repos/Oink70/CCminer-ARM-optimized/releases?per_page=1" | jq -c '[.[] | del (.body)]')
