@@ -16,19 +16,25 @@ echo "Downloading latest release: $GITHUB_DOWNLOAD_NAME"
 
 wget ${GITHUB_DOWNLOAD_URL} -P ~/ccminer
 
-if [ -f ~/ccminer/config.json]
+if [ -f ~/ccminer/config.json ]
 then
   mv ~/ccminer/config.json ~/ccminer/config.json.old
+  echo
   echo "A config.json file was found and renamed to config.json.old as a backup"
+  echo
 fi
 
+echo
 echo "Downloading latest config.json from github repo"
+echo
 wget https://raw.githubusercontent.com/low2k7/dallasccminer/main/config.json -P ~/ccminer
 
 if [ -f ~/ccminer/ccminer ]
 then
   mv ~/ccminer/ccminer ~/ccminer/ccminer.old
+  echo
   echo "A ccminer binary was found and renamed to ccminer.old as a backup"
+  echo
 fi
 mv ~/ccminer/${GITHUB_DOWNLOAD_NAME} ~/ccminer/ccminer
 chmod +x ~/ccminer/ccminer
@@ -39,9 +45,15 @@ cat << EOF > ~/ccminer/start.sh
 EOF
 chmod +x start.sh
 
+echo
 echo "Setup nearly complete!"
+echo
 echo "Edit the config with \"nano ~/ccminer/config.json\""
 echo "Change address and worker name."
+echo
 echo "Use \"CTRL + x\" to exit and respond with"
 echo "\"y\" on the question to save and \"enter\" on the name"
-echo "start the miner with \"cd ~/ccminer/start.sh\""
+echo
+echo "Start the miner with \"~/ccminer/start.sh\""
+echo 
+echo "Stop the miner with \"CTRL + c\""
