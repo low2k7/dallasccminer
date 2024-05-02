@@ -12,8 +12,9 @@ GITHUB_RELEASE_JSON=$(curl --silent "https://api.github.com/repos/Oink70/CCminer
 GITHUB_DOWNLOAD_URL=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets[0].browser_download_url")
 GITHUB_DOWNLOAD_NAME=$(echo $GITHUB_RELEASE_JSON | jq -r ".[0].assets[0].name")
 
+echo
 echo "Downloading latest release: $GITHUB_DOWNLOAD_NAME"
-
+echo
 wget ${GITHUB_DOWNLOAD_URL} -P ~/ccminer
 
 if [ -f ~/ccminer/config.json ]
@@ -51,8 +52,7 @@ echo
 echo "Edit the config with \"nano ~/ccminer/config.json\""
 echo "Change address and worker name."
 echo
-echo "Use \"CTRL + x\" to exit and respond with"
-echo "\"y\" on the question to save and \"enter\" on the name"
+echo "Use \"CTRL + x\" to exit and respond with \"y\" on the question and to save \"enter\" on the name"
 echo
 echo "Start the miner with \"~/ccminer/start.sh\""
 echo 
