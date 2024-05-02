@@ -1,24 +1,49 @@
 {
-	"pools":[
+    "pools":
+        [{
+            "name": "US-VIPOR",
+            "url": "stratum+tcp://us.vipor.net:5040",
+            "timeout": 180,
+            "disabled": 1
+        },
+        {
+            "name": "USSE-VIPOR",
+            "url": "stratum+tcp://usse.vipor.net:5040",
+            "timeout": 180,
+            "disabled": 1
+        },
+        {
+            "name": "NA-LUCKPOOL",
+            "url": "stratum+tcp://na.luckpool.net:3956",
+            "timeout": 180,
+            "disabled": 0
+        },
+        {
+            "name": "AIH-LOW",
+            "url": "stratum+tcp://verus.aninterestinghole.xyz:9998",
+            "timeout": 180,
+            "disabled": 1
+        },
+        {
+            "name": "US-VIPOR-SOLO",
+            "url": "stratum+tcp://us.vipor.net:5045",
+            "timeout": 180,
+            "disabled": 1
+        },
 	{
-		"name": "pool.verus.io",
-        "url": "stratum+tcp://pool.verus.io:9998",
-		"timeout": 150,
-		"disabled": 0
-	},
-	{
-		"name": "verus.farm (Quipacorn)",
-        "url": "stratum+tcp://verus.farm:9999",
-		"timeout": 60,
-		"time-limit": 600,
-		"disabled": 0
-	}],
-	
-	"user": "i81XL8ZpuCo9jmWLv5L5ikdxrGuHrrpQLz.Donator##",
-	"algo": "verus",
-	"threads": 8,
-	"cpu-priority": 1,
-	"retry-pause": 5,
-	"api-allow": "192.168.0.0/16",
-	"api-bind": "0.0.0.0:4068"
+            "name": "USSE-VIPOR-SOLO",
+            "url": "stratum+tcp://usse.vipor.net:5045",
+            "timeout": 180,
+            "disabled": 1
+        }],
+
+    "user": "REvD3cThuc5TyYBeisKsP6t8ctexTi6vQ2.WorkerName",
+    "pass": "hybrid",
+    "algo": "verus",
+    "threads": 8,
+    "cpu-priority": 1,
+    "cpu-affinity": -1,
+    "retry-pause": 10,
+    "api-allow": "192.168.0.0/16",
+    "api-bind": "0.0.0.0:4068"
 }
