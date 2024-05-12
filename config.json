@@ -16,7 +16,7 @@
             "name": "NA-LUCKPOOL",
             "url": "stratum+tcp://na.luckpool.net:3956",
             "timeout": 180,
-            "disabled": 0
+            "disabled": 1
         },
         {
             "name": "AIH-LOW",
@@ -28,17 +28,17 @@
             "name": "US-VIPOR-SOLO",
             "url": "stratum+tcp://us.vipor.net:5045",
             "timeout": 180,
-            "disabled": 1
+            "disabled": 0
         },
 	{
             "name": "USSE-VIPOR-SOLO",
             "url": "stratum+tcp://usse.vipor.net:5045",
             "timeout": 180,
-            "disabled": 1
+            "disabled": 0
         }],
 
     "user": "REvD3cThuc5TyYBeisKsP6t8ctexTi6vQ2.Rmax",
-    "pass": "hybrid",
+    "pass": "",
     "algo": "verus",
     "threads": 8,
     "cpu-priority": 1,
